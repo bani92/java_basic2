@@ -2,12 +2,13 @@ package org.example.lambda.ex3;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.BinaryOperator;
 
 public class ReduceExample {
 
-    public static int  reduce(List<Integer> list, int initial, MyReducer reducer) {
+    public static int  reduce(List<Integer> list, int initial, BinaryOperator<Integer> reducer) {
         for (int i : list) {
-            initial = reducer.reduce(initial, i);
+            initial = reducer.apply(initial, i);
         }
         return initial;
     }
