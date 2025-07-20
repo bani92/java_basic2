@@ -1,4 +1,4 @@
-package org.example.codeingTest.DFS;
+package org.example.codeingTest.DFS_feat_GPT;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
