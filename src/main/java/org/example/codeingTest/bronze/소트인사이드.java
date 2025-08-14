@@ -27,6 +27,18 @@ public class 소트인사이드 {
                 A[Max] = tmp;
             }
         }
+
+        // 버블정렬
+        for(int i=0; i<str.length(); i++) {
+            for(int j=i+1; j<str.length(); j++) {
+                if(A[i] < A[j]) {
+                    int tmp = A[j];
+                    A[j] = A[i];
+                    A[i] = tmp;
+                }
+            }
+        }
+
         for(int i=0; i<str.length(); i++) {
             System.out.print(A[i]);
         }
