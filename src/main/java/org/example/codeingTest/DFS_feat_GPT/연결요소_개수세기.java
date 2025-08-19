@@ -6,53 +6,49 @@ import java.util.ArrayList;
 import java.util.StringTokenizer;
 
 public class 연결요소_개수세기 {
-
-    static ArrayList<ArrayList<Integer>> graph;
     static boolean[] visited;
-
+    static ArrayList<ArrayList<Integer>> A;
     public static void main(String[] args) throws Exception {
-        // 그룹 갯수 파악하기
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
-        int N = Integer.parseInt(st.nextToken());
-        int M = Integer.parseInt(st.nextToken());
+        int n = Integer.parseInt(st.nextToken());
+        int m = Integer.parseInt(st.nextToken());
 
-        graph = new ArrayList<>();
-        visited = new boolean[N+1];
-
-
-        for(int i=0; i<=N; i++) {
-            graph.add(new ArrayList<>());
+        visited = new boolean[n+1];
+        A = new ArrayList();
+        for(int i=0; i<n+1; i++) {
+            A.add(new ArrayList<>());
         }
 
-        for(int i=0; i<M; i++) {
+        for(int i=0; i<m; i++) {
             st = new StringTokenizer(br.readLine());
-            int a = Integer.parseInt(st.nextToken());
-            int b = Integer.parseInt(st.nextToken());
+            int s = Integer.parseInt(st.nextToken());
+            int e = Integer.parseInt(st.nextToken());
 
-            graph.get(a).add(b);
-            graph.get(b).add(a);
+            A.get(s).add(e);
+            A.get(e).add(s);
         }
 
-        System.out.println(graph);
-        int groupCount = 0;
-        for(int i=1; i<=N; i++) {
+        int count = 0;
+        for(int i=1; i<=n; i++) {
             if(!visited[i]) {
-                groupCount++; // 새로운 탐색 직전에 카운트
-                dfs(i);
+                count++;
+                DFS(i);
             }
         }
-
-        System.out.println(groupCount);
+        System.out.println(count);
     }
 
-    public static void dfs(int value) {
-        visited[value] = true;
+    private static void DFS(int v) {
 
+        if(visited[v]) {
+            return;
+        }
+        visited[v] = true;
 
-        for(int item : graph.get(value)) {
+        for(int item : A.get(v)) {
             if(!visited[item]) {
-                dfs(item);
+                DFS(item);
             }
         }
     }
