@@ -1,4 +1,4 @@
-package org.example.codeingTest.Sort;
+package org.example.codeingTest.sort;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

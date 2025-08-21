@@ -1,4 +1,4 @@
-package org.example.codeingTest.Greedy;
+package org.example.codeingTest.greedy;
 
 import java.util.HashSet;
 

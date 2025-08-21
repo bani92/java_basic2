@@ -1,7 +1,4 @@
-package org.example.codeingTest.Greedy;
-
-import java.util.Arrays;
-import java.util.HashSet;
+package org.example.codeingTest.greedy;
 
 public class 체육복withArray {
     public static void main(String[] args) {

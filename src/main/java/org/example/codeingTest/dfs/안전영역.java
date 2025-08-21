@@ -1,8 +1,7 @@
-package org.example.codeingTest.DFS_feat_GPT;
+package org.example.codeingTest.dfs;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.Arrays;
 import java.util.StringTokenizer;
 
 public class 안전영역 {

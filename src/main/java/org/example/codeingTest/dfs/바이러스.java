@@ -1,13 +1,15 @@
-package org.example.codeingTest.BFS;
+package org.example.codeingTest.dfs;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.StringTokenizer;
 
-public class 연결요소의개수 {
+public class 바이러스 {
 
     static ArrayList<ArrayList<Integer>> graph;
     static boolean[] visited;
+    static int currentCnt;
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
@@ -15,8 +17,7 @@ public class 연결요소의개수 {
         int M = Integer.parseInt(st.nextToken());
 
         graph = new ArrayList<>();
-        visited = new boolean[N+1];
-        int result = 0;
+
 
         for(int i=0; i<=N; i++) {
             graph.add(new ArrayList<>());
@@ -31,31 +32,29 @@ public class 연결요소의개수 {
             graph.get(b).add(a);
         }
 
+        int maxCnt = 0;
         for(int i=1; i<=N; i++) {
+            // dfs가 1번일때 4번인데
+            // dfs가 2번일때 연결이 안되어있으면 갯수 cnt 세기
+            visited = new boolean[N+1];
+            currentCnt = 0;
+            dfs(i);
 
-            if(!visited[i]) {
-                result++;
-                bfs(i);
-            }
+            maxCnt = Math.max(maxCnt, currentCnt);
         }
-        System.out.println(result);
+
+        System.out.println(maxCnt);
     }
 
-    public static void bfs(int startNode) {
-        visited[startNode] = true;
-        Queue<Integer> queue = new LinkedList<>();
-        queue.add(startNode);
+    public static void dfs(int value) {
 
-        while(!queue.isEmpty()) {
-            int current = queue.poll();
+        visited[value] = true;
 
-            for(int nextNode : graph.get(current)) {
-                if(!visited[nextNode]) {
-                    visited[nextNode] = true;
-                    queue.add(nextNode);
-                }
+        for(int nextNode : graph.get(value)) {
+            if(!visited[nextNode]) {
+                currentCnt++;
+                dfs(nextNode);
             }
         }
-
     }
 }

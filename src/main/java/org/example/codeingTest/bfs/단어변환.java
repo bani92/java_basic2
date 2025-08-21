@@ -1,4 +1,4 @@
-package org.example.codeingTest.BFS;
+package org.example.codeingTest.bfs;
 
 import java.util.LinkedList;
 import java.util.Queue;

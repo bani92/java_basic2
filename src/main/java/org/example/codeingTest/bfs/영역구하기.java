@@ -1,6 +1,4 @@
-package org.example.codeingTest.BFS;
-
-import org.example.methodref.Person;
+package org.example.codeingTest.bfs;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

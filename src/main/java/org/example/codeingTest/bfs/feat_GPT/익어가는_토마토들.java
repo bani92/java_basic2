@@ -1,4 +1,4 @@
-package org.example.codeingTest.BFS.feat_GPT;
+package org.example.codeingTest.bfs.feat_GPT;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

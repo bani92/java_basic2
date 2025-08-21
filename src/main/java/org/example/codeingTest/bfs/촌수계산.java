@@ -1,4 +1,4 @@
-package org.example.codeingTest.BFS;
+package org.example.codeingTest.bfs;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
