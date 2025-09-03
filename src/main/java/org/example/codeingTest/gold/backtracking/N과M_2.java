@@ -4,11 +4,10 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class N과M_1 {
+public class N과M_2 {
     static int N, M;
-    static int[] arr;
+    static int arr[];
     static StringBuilder sb = new StringBuilder();
-    static boolean[] visited;
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
@@ -16,13 +15,16 @@ public class N과M_1 {
         M = Integer.parseInt(st.nextToken());
 
         arr = new int[M];
-        visited = new boolean[N+1];
+
         dfs(1,0);
 
         System.out.println(sb);
     }
 
     private static void dfs(int num, int depth) {
+
+        // 깊이에 도달했으면
+        // arr에 담았던 숫자들 담아야함
         if(depth == M) {
             for(int i=0; i<arr.length; i++) {
                 sb.append(arr[i]).append(" ");
@@ -31,14 +33,10 @@ public class N과M_1 {
             return;
         }
 
-        for(int i=1; i<=N; i++) {
-            if(!visited[i]) {
-                visited[i] = true;
-                arr[depth] = i;
-                dfs(i + 1, depth+1);
-                visited[i] = false;
-            }
+        for(int i=num; i<=N; i++) {
+            arr[depth] = i;
 
+            dfs(i + 1, depth + 1);
         }
     }
 }
