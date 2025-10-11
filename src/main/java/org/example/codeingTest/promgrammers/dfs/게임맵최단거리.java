@@ -1,4 +1,4 @@
-package org.example.codeingTest.promgrammers;
+package org.example.codeingTest.promgrammers.dfs;
 
 import java.util.LinkedList;
 import java.util.Queue;

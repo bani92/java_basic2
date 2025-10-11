@@ -1,4 +1,4 @@
-package org.example.codeingTest.silver.DFS;
+package org.example.codeingTest.promgrammers.dfs;
 
 public class 타켓넘버 {
     static int answer = 0;

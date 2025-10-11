@@ -1,4 +1,4 @@
-package org.example.codeingTest.silver.DFS;
+package org.example.codeingTest.promgrammers.dfs;
 
 public class 네트워크 {
     static boolean[] visited;
